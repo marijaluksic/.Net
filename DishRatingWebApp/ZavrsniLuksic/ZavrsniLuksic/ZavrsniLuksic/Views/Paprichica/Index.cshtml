@@ -1,0 +1,67 @@
+﻿@using ZavrsniLuksic.Web.Models
+@model List<Dish>
+
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<h1>Popis jela</h1>
+<div style="margin-top: 20px; margin-bottom: 10px;">
+	<partial name="_PaprichicaFilter" model="new PaprichicaFilterModel()" />
+</div>
+
+<table style="margin-top: 20px;" class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Jelo</th>
+			<th>Stupanj ljutosti</th>
+			<th>Restoran</th>
+			<th>Cijena</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody id="tbl-dishes">
+		@foreach (var item in Model)
+		{
+			<tr onmouseover="getOpacityBack(this)" onmouseout="removeOpacity(this)" onclick="getBoldy(this)">
+				<td >
+					<a asp-action="Details" asp-route-id="@item.ID" style="color: #26112b;">@item.Name</a>
+				</td>
+				<td >@item.Spiciness?.Level</td>
+				<td>@item.Restaurant?.Name</td>
+				<td>@item.Price kn</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-info" style="background-color: #26112b; color: white; border-color: #26112b;">Uredi</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@section scripts{
+	<script>
+		$(function (){
+			$("#tbl-dishes").find("tr").css("opacity", "0.5");
+		});
+    </script>
+	<script>
+		function getOpacityBack(tr){
+			$(tr).css("opacity", "1.0")
+		}
+	</script>
+	<script>
+		function removeOpacity(tr){
+			$(tr).css("opacity", "0.5")
+		}
+	</script>
+	<script>
+		function getBoldy(tr){
+			fontWeight = $(tr).css('font-weight')
+			if (fontWeight  == 'bold' || fontWeight  == '700'){
+				$(tr).css("font-weight", "normal")
+			} else{
+				$(tr).css("font-weight", "bold")
+			}
+		}
+	</script>
+}

@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\mvc-2021-22-vjezba-04-setup",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.DAL",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.DAL\\Migrations",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.Model",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.Web",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.Web\\wwwroot",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.Web\\wwwroot\\lib",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.Web\\wwwroot\\lib\\jquery.mapbox.geocoder",
+    "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.Web\\wwwroot\\lib\\jquery.mapbox.geocoder\\dist"
+  ],
+  "SelectedNode": "\\mvc-2021-22-vjezba-04-setup\\Vjezba\\Vjezba.sln",
+  "PreviewInSolutionExplorer": false
+}

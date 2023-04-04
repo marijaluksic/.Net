@@ -1,0 +1,24 @@
+﻿@using ZavrsniLuksic.Web.Models
+
+@model PaprichicaFilter1Model
+
+<form action="@Url.Action("Index1")" method="post">
+	<div class="row">
+		<div class="col">
+			<input asp-for="Name" class="form-control" type="text" placeholder="Ime" />
+		</div>
+		<div class="col">
+			<input asp-for="Cuisine" class="form-control" type="text" placeholder="Kuhinja" />
+		</div>
+		<div class="col">
+			<input asp-for="Address" class="form-control" type="text" placeholder="Adresa" />
+		</div>
+		<div class="col">
+			<input asp-for="PhoneNumber" class="form-control" type="text" placeholder="Telefon" />
+		</div>
+		<div class="col">
+			<button type="submit" class="btn btn-outline-info" style="background-color: white; color: #26112b; border-color: #26112b; border-style: dashed;">Pretraga</button>
+			<a asp-action="Create1" class="btn btn-success" style="background-color: #26112b; color: white; border-color: #26112b;">Novi</a>
+		</div>
+	</div>
+</form>

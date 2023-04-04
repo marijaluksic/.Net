@@ -1,0 +1,57 @@
+﻿@model Restaurant
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+@if (Model != null)
+{
+	<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a asp-action="Index1" style="color: #26112b;">Popis restorana</a></li>
+		<li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+	</ol>
+	</nav>
+	
+
+	<div>
+		<h4>@Html.DisplayFor(model => model.Name)</h4>
+		<hr />
+		<dl class="dl-horizontal">
+			<dt>
+				Kuhinja
+			</dt>
+            <dd>
+                @Model?.Cuisine?.Name
+            </dd>
+			<dt>
+				Adresa
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.Address)
+			</dd>
+			<dt>
+				Telefon
+			</dt>
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+			<dt>
+				Url
+			</dt>
+            <dd>
+                @Html.DisplayFor(model => model.Url)
+            </dd>
+			<dd><a asp-action="Edit1" asp-route-id="@Model?.ID" class="btn btn-outline-info" style="background-color: #26112b; color: white; border-color: #26112b;">>Uredi</a></dd>
+		</dl>
+	</div>
+
+}
+else
+{
+	<div class="alert alert-danger">
+		Nije odabran ispravni ID restorana.
+	</div>
+
+}
+

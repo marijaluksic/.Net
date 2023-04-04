@@ -1,0 +1,43 @@
+﻿@model ZavrsniLuksic.Model.Dish
+
+@{
+	ViewData["Title"] = "Dodavanje novog jela";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a asp-action="Index" style="color: #26112b;">Popis jela</a></li>
+		<li class="breadcrumb-item active" aria-current="page">Novo jelo</li>
+	</ol>
+</nav>
+
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create" onsubmit="setFormSubmitting()">
+			@await Html.PartialAsync("_CreateOrEdit")
+		</form>
+	</div>
+</div>
+
+@section scripts{
+
+<script>
+	var warnMessage = "You have unsaved changes on this page!";
+
+$(document).ready(function() {
+    $('input:not(:button,:submit),textarea,select').change(function () {
+        window.onbeforeunload = function () {
+            if (warnMessage != null) return warnMessage;
+        }
+    });
+    $('input:submit').click(function(e) {
+        warnMessage = null;
+    });
+});
+</script>
+
+
+}
+

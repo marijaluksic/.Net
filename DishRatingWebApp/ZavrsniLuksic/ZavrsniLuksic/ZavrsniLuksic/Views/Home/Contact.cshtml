@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Contact page";
+}
+
+<div class="row">
+	<div class="col-md-12  mx-auto">
+		<h2>Tko pita - ne skita!</h2>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contact-modal" style="background-color: #26112b; color: white; border-color: #26112b;">
+			Ispuni obrazac
+		</button>
+	</div>
+</div>
+
+<form action="/Home/SubmitQuery" method="post">
+	<!-- Modal -->
+	<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Kontakt forma</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="ime">Ime</label>
+								<input type="text" class="form-control" placeholder="Unesite ime" name="ime">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="prezime">Prezime</label>
+								<input type="text" class="form-control" placeholder="Unesite prezime" name="prezime">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="control-label">Email</label>
+						<input type="email" class="form-control" placeholder="Unesite email" name="email">
+					</div>
+					<div class="form-group">
+						<label for="poruka" class="control-label">Poruka</label>
+						<textarea class="form-control" rows="5" name="poruka"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="tip" class="control-label">Tip upita</label>
+						<select name="tip" class="form-control">
+							<option value="Pohvala">Pohvala</option>
+							<option value="Upit">Upit</option>
+							<option value="Poslovni prijedlog">Poslovni prijedlog</option>
+							<option value="Žalba">Žalba</option>
+						</select>
+					</div>
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="newsletter" value="true" />
+									Želim primati newsletter
+								</label>
+								<input type="hidden" name="newsletter" value="false" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary" style="background-color: #26112b; color: white; border-color: #26112b;">Pošalji upit!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Adresa sjedišta</div>
+			<div class="panel-body">
+				<address>
+					Ulica Nikole Tesle 4<br />
+					10 000, Zagreb<br />
+					<abbr title="Phone">Tel.:</abbr>
+					+385 99 4414 146
+				</address>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Javite nam se!</div>
+			<div class="panel-body">
+				<address>
+					<strong>E-mail:</strong>   <a href="mailto:Support@example.com" style="color: #26112b;">paprichica@hotmail.com</a><br />
+					<div>
+						<a href="https://www.poetryfoundation.org/poems/42904/how-much-wood-could-a-woodchuck-chuck-" target="_blank"><img src="https://www.transparentpng.com/thumb/facebook-logo/facebook-icon-transparent-background-20.png" style="width: 38px;" /></a>
+						<a href="https://en.wikipedia.org/wiki/Twin_Peaks" target="_blank"><img src="https://www.transparentpng.com/thumb/instagram-logo-icon/JTKuuM-instagram-logo-icon-free-transparent.png" style="width: 38px;" /></a>
+					</div>
+				</address>
+			</div>
+		</div>
+	</div>
+</div>

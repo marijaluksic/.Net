@@ -1,0 +1,66 @@
+﻿@model Vjezba.Model.Client
+
+@{
+	ViewData["Title"] = "Izmjena postojećeg klijenta";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index">Popis klijenata</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Postojeći klijent</li>
+    </ol>
+</nav>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input asp-for="ID" type="hidden" />
+            @await Html.PartialAsync("_CreateOrEdit")
+        </form>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+        $("#email").focus(function () {
+            $(this).next("span").text("vas.email@gmail.com");
+        });
+    </script>
+    <script>
+        $("#email").focusout(function () {
+            $(this).next("span").text("");
+        });
+    </script>
+    <link rel="stylesheet" href="~/lib/jquery.mapbox.geocoder/dist/bootstrap-theme.min.css" type="text/css" />
+    <script src="~/lib/jquery.mapbox.geocoder/dist/jquery.mapbox.geocoder.min.js"></script>
+
+    <script type="text/javascript">
+        (function ($) {
+            $('#Address').mapboxAutocomplete({
+                accessToken: "pk.eyJ1IjoiYWtvbmpldGljIiwiYSI6ImNsMnVncXQxYjAxd2Uzam1wOWd0ZGdqZjkifQ.9c9j9Pa7CEvB1PRalHJZYg",
+                endpoint: 'https://api.mapbox.com/geocoding/v5/',
+                mode: 'mapbox.places',
+                language: 'hr',
+                width: '100%',
+                zindex: '1000'
+            });
+        })(jQuery);
+    </script>
+    <script>
+        var warnMessage = "You have unsaved changes on this page!";
+
+        $(document).ready(function () {
+            $('input:not(:button,:submit),textarea,select').change(function () {
+                window.onbeforeunload = function () {
+                    if (warnMessage != null) return warnMessage;
+                }
+            });
+            $('input:submit').click(function (e) {
+                warnMessage = null;
+            });
+        });
+    </script>
+
+
+}

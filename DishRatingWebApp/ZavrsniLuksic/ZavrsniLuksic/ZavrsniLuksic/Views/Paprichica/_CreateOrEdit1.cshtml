@@ -1,0 +1,41 @@
+﻿@model ZavrsniLuksic.Model.Restaurant
+
+<div class="form-group">
+    <label class="control-label">Ime</label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="control-label">Kuhinja</label>
+    <select asp-for="CuisineID" asp-items="ViewBag.Cuisines" class="form-control"></select>
+    <span asp-validation-for="CuisineID" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="control-label">Adresa</label>
+    <input asp-for="Address" class="form-control" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+
+
+
+<div class="form-group">
+    <label class="control-label">Telefon</label>
+    <input asp-for="PhoneNumber" class="form-control" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+</div>
+
+
+
+
+<div class="form-group">
+    <label class="control-label">URL</label>
+    <input asp-for="Url" class="form-control" />
+    <span asp-validation-for="Url" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Spremi" class="btn btn-outline-success" style="background-color: #26112b; color: white; border-color: #26112b;" />
+</div>
+
